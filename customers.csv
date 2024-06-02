@@ -1,0 +1,4 @@
+customer_id,customer_email,customer_name,customer_handled_by_email,lead_generated_by_name,active_customer_flag,customer_cancelled_date,last_contacted_date
+1,ethan@example.com,ethan,employee1@leads.com,employee1,TRUE,,16/02/2023
+2,john@example.com,john,employee2@leads.com,employee2,FALSE,24/05/2024,24/05/2024
+3,steve@example.com,steve,employee1@leads.com,employee1,FALSE,16/02/2023,23/05/2024
