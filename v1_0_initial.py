@@ -1,3 +1,4 @@
+
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
@@ -10,7 +11,6 @@ class CustomerDatabase:
         sheet = self.client.open("customers").sheet1
         records = sheet.get_all_records()
         return [rec for rec in records if rec['customer_handled_by_email'] == employee_email]
-
 
 class CustomersPortal:
     def __init__(self, scope, env_folder_path: str, employee_email: str) -> None:

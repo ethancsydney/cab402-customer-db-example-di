@@ -14,7 +14,7 @@ class GoogleSheetsCustomerDatabase:
         return [rec for rec in records if rec['customer_handled_by_email'] == employee_email]
 
 class CustomersPortal:
-    def __init__(self, employee_email, scope = None, env_folder_path = None, db_api_key = None, db_host_url = None, db_warehouse_id = None) -> None:
+    def __init__(self, employee_email, scope, env_folder_path, db_api_key, db_host_url, db_warehouse_id) -> None:
         self.employee_email = employee_email
         employee_domain = employee_email.split('@')[1]
         if employee_domain == 'theoriginal.com':
@@ -35,8 +35,8 @@ class CustomersPortal:
 class DatabricksCustomerDatabase:
     def __init__(self, api_key, db_host_url, warehouse_id) -> None:
         self.api_key = api_key
-        self.db_host = db_host_url#'https://cab402-n10484027-example.databricks.com'
-        self.warehouse_id = warehouse_id#"prod"
+        self.db_host = db_host_url
+        self.warehouse_id = warehouse_id
 
     def _executeQuery(self, query: str):
         query_resp = requests.post(
